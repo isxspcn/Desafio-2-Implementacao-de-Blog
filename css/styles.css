@@ -36,7 +36,9 @@
 body {
     display: grid;
     grid-template-rows: auto 1fr;
+
     min-height: 100vh;
+
 
     font-family: 'Montserrat', sans-serif;
 }
@@ -70,11 +72,12 @@ body>header img {
 }
 
 main {
-    position: fixed;
+    position: absolute;
     z-index: 1;
 }
 
-#hero {    
+#hero {  
+      /* QUEM SABE PASSAR ISSO PRO @MEDIA SCREEN MOBILE */
     background-image: url(../imgs/hero-background.png);
     background-size: cover;
     background-position: 20%;
@@ -157,4 +160,63 @@ main {
 
     font-size: 20px;
     font-weight: var(--font-medium);
+}
+
+.featured-products {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 20px;
+
+    margin-top: 20px;
+
+    justify-content: stretch;
+}
+
+.featured-products h2 {
+    font-size: 15px;
+    font-weight: var(--font-medium);
+}
+
+.featured-products nav {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.featured-products img {
+    width: 100%;
+
+    border-radius: var(--round-2);
+}
+
+.product-imgs {
+    display: grid;
+    row-gap: 17px;
+}
+
+.product-imgs img {
+    height: 474px;
+}
+
+#product-filter button{
+    background-color: transparent;
+
+    padding: 5px 10px;
+
+    border: none;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: var(--font-semi-bold);
+}
+
+#product-filter .active-filter {
+    background: var(--button-gradient);
+
+    padding: 10px 16px;
+
+    border-radius: var(--round-3);
+
+    color: white;
 }
