@@ -15,16 +15,18 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="imgs/fef-paw-prints-1.svg" />
-        <p>Paws n' Play</p>
-      </div>
+      <a href="/" class="logo">
+        <img src="imgs/fef-paw-prints-1.svg" alt="Paws n' Plays Logo" />
+        <span>Paws n' Play</span>
+      </a>
+      <!-- TROCAR O ELEMENTO PRA FAZER O DROPDOWN -->
       <img src="imgs/ci-menu.svg" style="width: 30px" />
     </header>
 
     <main>
       <section id="hero">
         <h1>Pawsitively Perfect: Where Every Pet's Dream Comes True!</h1>
+
         <p>
           Welcome to Paws n’ Play, the ultimate destination for pet lovers!
           Explore a world of tail-wagging joy and furry companionship with our
@@ -32,23 +34,26 @@
           playful toys, we're here to make every moment with your pet
           pawsitively perfect!"
         </p>
+
         <button>
-          <span> Shop Now </span>
-          <img src="imgs/fef-paw-prints-1.svg" />
+          Shop Now
+          <img src="imgs/fef-paw-prints-1.svg" alt="" aria-hidden="true" />
         </button>
       </section>
 
       <section id="shop" class="section">
         <header class="section-header">
           <div>
-            <img src="imgs/fef-paw-prints-2.svg" style="height: 24px" />
-            <h1 class="section-heading">Shop</h1>
+            <img src="imgs/fef-paw-prints-2.svg" alt="" aria-hidden="true" />
+            <h2 class="section-heading">Shop</h2>
           </div>
           <!-- ADICIONAR INPUT SEARCH E TALS -->
           <img src="imgs/ic-search.svg" style="opacity: 0.38; height: 24px" />
         </header>
+
         <section class="featured-products">
-          <h2>Featured Products</h2>
+          <h3>Featured Products</h3>
+
           <nav id="product-filter" aria-label="Product Filter">
             <button class="active-filter">Random</button>
             <button>Cats</button>
@@ -56,6 +61,7 @@
             <button>Fish</button>
             <button>Birds</button>
           </nav>
+
           <div class="product-imgs">
             <img
               src="imgs/product-cat-food-1.png"
@@ -68,11 +74,131 @@
           </div>
         </section>
       </section>
+
       <section id="services" class="section">
         <header class="section-header">
           <div>
-            <img src="imgs/fef-paw-prints-2.svg">
-            <h1>Services</h1>
+            <img src="imgs/fef-paw-prints-2.svg" alt="" aria-hidden="true" />
+            <h2>Services</h2>
+          </div>
+        </header>
+        <div class="service-cards">
+          <article class="service-card" id="grooming-card">
+            <h3>Grooming</h3>
+            <div class="service-details">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque
+                ut eget tempor egestas diam. Donec pellentesque ut eget tempor
+                egestas diam. Dolor sit amet consectetur. Vitae donec
+                pellentesque ut eget tempor egestas diam. Donec pellentesque ut
+                eget tempor egestas diam.
+              </p>
+              <a href="">Learn more</a>
+            </div>
+          </article>
+          <article class="service-card" id="boarding-card">
+            <h3>Boarding</h3>
+            <div class="service-details">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque
+                ut eget tempor egestas diam. Donec pellentesque ut eget tempor
+                egestas diam. Dolor sit amet consectetur. Vitae donec
+                pellentesque ut eget tempor egestas diam. Donec pellentesque ut
+                eget tempor egestas diam.
+              </p>
+              <a href="">Learn more</a>
+            </div>
+          </article>
+          <article class="service-card" id="veterinary-card">
+            <h3>Veterinary</h3>
+            <div class="service-details">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque
+                ut eget tempor egestas diam. Donec pellentesque ut eget tempor
+                egestas diam. Dolor sit amet consectetur. Vitae donec
+                pellentesque ut eget tempor egestas diam. Donec pellentesque ut
+                eget tempor egestas diam.
+              </p>
+              <a href="">Learn more</a>
+            </div>
+          </article>
+          <article class="service-card" id="training-card">
+            <h3>Training</h3>
+            <div class="service-details">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque
+                ut eget tempor egestas diam. Donec pellentesque ut eget tempor
+                egestas diam. Dolor sit amet consectetur. Vitae donec
+                pellentesque ut eget tempor egestas diam. Donec pellentesque ut
+                eget tempor egestas diam.
+              </p>
+              <a href="">Learn more</a>
+            </div>
+          </article>
+          <article class="service-card" id="adoption-card">
+            <h3>Adoption</h3>
+            <div class="service-details">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque
+                ut eget tempor egestas diam. Donec pellentesque ut eget tempor
+                egestas diam. Dolor sit amet consectetur. Vitae donec
+                pellentesque ut eget tempor egestas diam. Donec pellentesque ut
+                eget tempor egestas diam.
+              </p>
+              <a href="">Learn more</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="about-us" class="section">
+        <header class="section-header">
+          <div>
+            <img src="imgs/fef-paw-prints-2.svg" alt="" aria-hidden="true" />
+            <h2>About Us</h2>
+          </div>
+        </header>
+        <p>
+          At Paws n’ Play, our journey began with a simple yet profound love
+          for animals. Inspired by the unwavering companionship and joy they
+          bring to our lives, we embarked on a mission to create a haven
+          where pets and their owners alike could experience unparalleled
+          happiness and care.
+        </p>
+        <p>
+          Driven by our passion for animal welfare, we hand-select each
+          product and service with meticulous attention to quality and
+          sustainability. From nutritious food and enriching toys to expert
+          grooming and healthcare, every offering is carefully curated to
+          meet the unique needs of our beloved furry friends.
+        </p>
+        <p>
+          But our commitment doesn't end there. We're dedicated to fostering
+          a community that celebrates the bond between pets and their human
+          companions. Through educational resources, compassionate support,
+          and memorable experiences, we strive to empower pet owners to
+          provide the best possible care for their furry family members.
+        </p>
+        <p>
+          At Paws n’ Play, customer satisfaction isn't just a goal – it's
+          our guiding principle. We go above and beyond to ensure every
+          interaction leaves tails wagging and hearts smiling. From
+          personalized recommendations to attentive service, we're here to
+          make your journey with your pet as joyful and fulfilling as
+          possible.
+        </p>
+        <p>
+          Join us in our mission to create a world where every pet is
+          cherished, every need is met, and every tail wags with happiness.
+          Welcome to Paws n’ Play, where pets are family, and love knows no
+          bounds.
+        </p>
+      </section>
+
+      <section id="blog" class="section">
+        <header class="section-header">
+          <div>
+            <img src="imgs/fef-paw-prints-2.svg" alt="" aria-hidden="true">
+            <h2>Blog</h2>
           </div>
         </header>
       </section>
