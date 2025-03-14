@@ -11,7 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="ts/js/app.js" defer></script>
+    <script src="ts/js/mobile.js" defer></script>
+    <script src="ts/js/desktop.js" defer></script>
   </head>
   <body>
     <header>
@@ -19,9 +20,21 @@
         <img src="imgs/fef-paw-prints-1.svg" alt="Paws n' Plays Logo" />
         <span>Paws n' Play</span>
       </a>
-      <!-- TROCAR O ELEMENTO PRA FAZER O DROPDOWN -->
-      <img src="imgs/ci-menu.svg" style="width: 30px" />
+
+      <button id="hamburger-menu">
+        <img src="imgs/ci-menu.svg" />
+      </button>
+      <nav id="mobile-menu" class="hidden">
+        <ul>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
+    <div id="overlay" class="hidden"></div>
 
     <main>
       <section id="hero">
@@ -35,10 +48,10 @@
           pawsitively perfect!"
         </p>
 
-        <button>
+        <a href="#shop">
           Shop Now
           <img src="imgs/fef-paw-prints-1.svg" alt="" aria-hidden="true" />
-        </button>
+        </a>
       </section>
 
       <section id="shop" class="section">
@@ -48,7 +61,15 @@
             <h2 class="section-heading">Shop</h2>
           </div>
           <!-- ADICIONAR INPUT SEARCH E TALS -->
-          <img src="imgs/ic-search.svg" style="opacity: 0.38; height: 24px" />
+          <div class="shop-search">
+            <label for="">
+              <img
+                src="imgs/ic-search.svg"
+                style="opacity: 0.38; height: 24px"
+              />
+            </label>
+            <input type="search" name="" id="" />
+          </div>
         </header>
 
         <section class="featured-products">
@@ -62,14 +83,51 @@
             <button>Birds</button>
           </nav>
 
-          <div class="product-imgs">
+          <div class="product-cards">
+            <article class="product-card">
+              <h4 class="product-title">Multivitamin For Cat</h4>
+              <p class="product-description">
+                Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque
+                ut eget tempor egestas diam.
+              </p>
+              <div class="quantity">
+                <button class="quantity-btn minus">-</button>
+                <input type="number" id="quantity-input" value="1" min="1">
+                <button class="quantity-btn plus">+</button>
+              </div>
+              <button class="add-cart">Add to cart</button>
+              <img
+                src="imgs/product-cat-food-1.jpeg"
+                alt="Pacote laranja de ração de gato"
+              />
+            </article>
             <img
-              src="imgs/product-cat-food-1.png"
-              alt="Pacote laranja de ração de gato"
+              src="imgs/product-cat-food-2.jpeg"
+              alt="Pacote branco de ração de gato"
             />
             <img
-              src="imgs/product-cat-food-2.png"
-              alt="Pacote branco de ração de gato"
+              src="imgs/product-dog-food-1.jpeg"
+              alt="Pacote branco de ração de cachorro"
+            />
+            <img
+              src="imgs/product-dog-food-2.jpeg"
+              alt="Lata de ração de cachorro"
+            />
+            <img
+              src="imgs/product-fish-food-1.jpeg"
+              alt="Pote de comida de peixe"
+            />
+            <img
+              src="imgs/product-fish-food-2.jpeg"
+              alt="Pacote azul de comida de peixe"
+            />
+            <img
+              src="imgs/product-bird-food-1.jpeg"
+              alt="Pacote de comida de pássaro 1"
+            />
+            <img
+              src="imgs/product-bird-food-2.jpeg"
+              alt="Pacote de comida de pássaro 2"
             />
           </div>
         </section>
@@ -204,16 +262,17 @@
         <article>
           <h3>Milestone: 20,000 Pets Treated</h3>
           <p>
-            Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
-            mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
-            quis fusce augue enim. Quis at habitant diam at. Suscipit tristique
-            risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie
-            aliquet sodales id est ac volutpat. Eget quis mi enim, leo lacinia
-            pharetra, semper. Eget in volutpat mollis at volutpat lectus velit,
-            sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at
-            habitant diam at. Suscipit tristique risus, at donec. In turpis vel
-            et quam imperdiet. Ipsum molestie aliquet sodales id est ac
-            volutpat.
+            Eget quis mi enim, leo lacinia pharetra, semper. Eget in
+            <strong>volutpat mollis</strong> at volutpat lectus velit, sed
+            auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant
+            diam at. Suscipit <strong>tristique risus</strong>, at donec. In
+            turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est
+            ac volutpat. Eget quis mi enim, leo lacinia pharetra, semper. Eget
+            in <strong>volutpat mollis</strong> at volutpat lectus velit, sed
+            auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant
+            diam at. Suscipit <strong>tristique risus</strong>, at donec. In
+            turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est
+            ac volutpat.
           </p>
 
           <section>
@@ -509,12 +568,34 @@
         <section class="copyright-bar">
           <p>© 2024 Paws n’ Play. All rights reserved.</p>
           <ul>
-            <li><a href=""><img src="imgs/footer-socials-twitter.svg" alt=""></a></li>
-            <li><a href=""><img src="imgs/footer-socials-linkedin.svg" alt=""></a></li>
-            <li><a href=""><img src="imgs/footer-socials-facebook.svg" alt=""></a></li>
-            <li><a href=""><img src="imgs/footer-socials-github.svg" alt=""></a></li>
-            <li><a href=""><img src="imgs/footer-socials-angellist.svg" alt=""></a></li>
-            <li><a href=""><img src="imgs/footer-socials-dribbble.svg" alt=""></a></li>
+            <li>
+              <a href=""
+                ><img src="imgs/footer-socials-twitter.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="imgs/footer-socials-linkedin.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="imgs/footer-socials-facebook.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""><img src="imgs/footer-socials-github.svg" alt="" /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="imgs/footer-socials-angellist.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="imgs/footer-socials-dribbble.svg" alt=""
+              /></a>
+            </li>
           </ul>
         </section>
       </section>
