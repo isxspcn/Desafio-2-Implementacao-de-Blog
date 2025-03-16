@@ -1,5 +1,27 @@
 "use strict";
-// DROPDOWN MENU
+// AJUSTAR A ALTURA DO CARD DO PRODUTO AUTOMATICAMENTE
+// DE ACORDO COM A ALTURA DA IMAGEM DO PRODUTO
+const productImage = document.querySelectorAll(".product-image");
+function calculateCardHeight() {
+    productImage.forEach((image) => {
+        const productCard = image.parentElement;
+        if (productCard) {
+            if (image.complete) {
+                productCard.style.height = `${image.offsetHeight}px`;
+            }
+            else {
+                image.onload = () => {
+                    productCard.style.height = `${image.offsetHeight}px`;
+                };
+            }
+        }
+        else {
+            console.error("Could not find product card for image:", productImage);
+        }
+    });
+}
+calculateCardHeight();
+// MENU DROPDOWN DO HEADER PRINCIPAL
 const dropdownButton = document.getElementById("hamburger-menu");
 const mobileMenu = document.getElementById("mobile-menu");
 const overlay = document.getElementById("overlay");
@@ -17,5 +39,81 @@ menuLinks.forEach((link) => {
         toggleVisibility(overlay);
     });
 });
-// PRODUCT FILTER
+// MOVER O SEARCH DO HEADER DO SHOP PRO HEADER DOS PRODUTOS
+const shopSearch = document.querySelector('.shop-search');
+const shopSectionHeader = shopSearch === null || shopSearch === void 0 ? void 0 : shopSearch.parentElement;
+const featuredHeader = document.querySelector('.featured-header');
+function moveShopSearch() {
+    if (shopSearch && shopSectionHeader && featuredHeader) {
+        if (window.innerWidth < 768) {
+            shopSectionHeader.appendChild(shopSearch);
+        }
+        else {
+            featuredHeader.appendChild(shopSearch);
+        }
+    }
+}
+moveShopSearch();
+window.addEventListener('resize', moveShopSearch);
+// FILTRO DOS PRODUTOS
+const filterSelect = document.getElementById("product-filter");
+const filterButtonsContainer = document.getElementById("filter-buttons");
+// Botões do filtro
+if (filterSelect && filterButtonsContainer) {
+    Array.from(filterSelect.options).forEach((option) => {
+        const button = document.createElement("button");
+        button.textContent = option.textContent;
+        button.value = option.value;
+        button.addEventListener("click", () => {
+            filterSelect.value = button.value;
+            filterSelect.dispatchEvent(new Event("change"));
+            const filterButtons = document.querySelectorAll("button");
+            filterButtons.forEach((btn) => {
+                btn.classList.remove("active-filter");
+            });
+            button.classList.add("active-filter");
+        });
+        filterButtonsContainer.appendChild(button);
+    });
+    const initialButtons = filterButtonsContainer === null || filterButtonsContainer === void 0 ? void 0 : filterButtonsContainer.querySelectorAll("button");
+    initialButtons.forEach((btn) => {
+        if (btn.value === filterSelect.value) {
+            btn.classList.add("active-filter");
+        }
+    });
+}
+// Filtro em si
+const productCards = document.querySelectorAll(".product-card");
+if (filterSelect && productCards) {
+    function filterProducts(category) {
+        if (category === "random") {
+            const visibleCards = Array.from(productCards)
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 2);
+            productCards.forEach((card) => {
+                if (visibleCards.some((visibleCard) => visibleCard === card)) {
+                    card.style.display = "flex";
+                }
+                else {
+                    card.style.display = "none";
+                }
+            });
+        }
+        else {
+            productCards.forEach((card) => {
+                if (card.dataset.category === category) {
+                    card.style.display = "flex";
+                }
+                else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    }
+    filterSelect.addEventListener("change", () => {
+        filterProducts(filterSelect.value);
+        calculateCardHeight();
+    });
+    filterProducts("random");
+}
 // FORM VALIDATION
