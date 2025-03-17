@@ -1,26 +1,4 @@
 "use strict";
-// AJUSTAR A ALTURA DO CARD DO PRODUTO AUTOMATICAMENTE
-// DE ACORDO COM A ALTURA DA IMAGEM DO PRODUTO
-const productImage = document.querySelectorAll(".product-image");
-function calculateCardHeight() {
-    productImage.forEach((image) => {
-        const productCard = image.parentElement;
-        if (productCard) {
-            if (image.complete) {
-                productCard.style.height = `${image.offsetHeight}px`;
-            }
-            else {
-                image.onload = () => {
-                    productCard.style.height = `${image.offsetHeight}px`;
-                };
-            }
-        }
-        else {
-            console.error("Could not find product card for image:", productImage);
-        }
-    });
-}
-calculateCardHeight();
 // MENU DROPDOWN DO HEADER PRINCIPAL
 const dropdownButton = document.getElementById("hamburger-menu");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -40,9 +18,9 @@ menuLinks.forEach((link) => {
     });
 });
 // MOVER O SEARCH DO HEADER DO SHOP PRO HEADER DOS PRODUTOS
-const shopSearch = document.querySelector('.shop-search');
+const shopSearch = document.querySelector(".shop-search");
 const shopSectionHeader = shopSearch === null || shopSearch === void 0 ? void 0 : shopSearch.parentElement;
-const featuredHeader = document.querySelector('.featured-header');
+const featuredHeader = document.querySelector(".featured-header");
 function moveShopSearch() {
     if (shopSearch && shopSectionHeader && featuredHeader) {
         if (window.innerWidth < 768) {
@@ -54,7 +32,7 @@ function moveShopSearch() {
     }
 }
 moveShopSearch();
-window.addEventListener('resize', moveShopSearch);
+window.addEventListener("resize", moveShopSearch);
 // FILTRO DOS PRODUTOS
 const filterSelect = document.getElementById("product-filter");
 const filterButtonsContainer = document.getElementById("filter-buttons");
@@ -67,7 +45,7 @@ if (filterSelect && filterButtonsContainer) {
         button.addEventListener("click", () => {
             filterSelect.value = button.value;
             filterSelect.dispatchEvent(new Event("change"));
-            const filterButtons = document.querySelectorAll("button");
+            const filterButtons = filterButtonsContainer.querySelectorAll("button");
             filterButtons.forEach((btn) => {
                 btn.classList.remove("active-filter");
             });
@@ -87,9 +65,10 @@ const productCards = document.querySelectorAll(".product-card");
 if (filterSelect && productCards) {
     function filterProducts(category) {
         if (category === "random") {
+            let sliceEnd = window.innerWidth < 768 ? 2 : 3;
             const visibleCards = Array.from(productCards)
                 .sort(() => 0.5 - Math.random())
-                .slice(0, 2);
+                .slice(0, sliceEnd);
             productCards.forEach((card) => {
                 if (visibleCards.some((visibleCard) => visibleCard === card)) {
                     card.style.display = "flex";
@@ -112,7 +91,6 @@ if (filterSelect && productCards) {
     }
     filterSelect.addEventListener("change", () => {
         filterProducts(filterSelect.value);
-        calculateCardHeight();
     });
     filterProducts("random");
 }
