@@ -1,9 +1,8 @@
-// MENU DROPDOWN DO HEADER PRINCIPAL
-
+// MAIN HEADER DROPDOWN MENU (MOBILE)
 const dropdownButton = document.getElementById("hamburger-menu");
-const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenu = document.getElementById("page-nav");
 const overlay = document.getElementById("overlay");
-const menuLinks = document.querySelectorAll("#mobile-menu ul li a");
+const menuLinks = document.querySelectorAll("#page-nav ul li a");
 
 function toggleVisibility(element: HTMLElement | null) {
   element?.classList.toggle("hidden");
@@ -21,13 +20,10 @@ menuLinks.forEach((link) => {
   });
 });
 
-// MOVER O SEARCH DO HEADER DO SHOP PRO HEADER DOS PRODUTOS
-
-const shopSearch = document.querySelector(".shop-search") as HTMLElement | null;
-const shopSectionHeader = shopSearch?.parentElement as HTMLElement | null;
-const featuredHeader = document.querySelector(
-  ".featured-header"
-) as HTMLElement | null;
+// MOVING PRODUCT SEARCH FROM SHOP HEADER TO FEATURED PRODUCTS HEADER
+const shopSearch = document.querySelector(".shop-search");
+const shopSectionHeader = document.querySelector("#shop .section-header");
+const featuredHeader = document.querySelector(".featured-header");
 
 function moveShopSearch() {
   if (shopSearch && shopSectionHeader && featuredHeader) {
@@ -39,21 +35,15 @@ function moveShopSearch() {
   }
 }
 
-moveShopSearch();
-
 window.addEventListener("resize", moveShopSearch);
 
-// FILTRO DOS PRODUTOS
-
+// PRODUCT FILTER
 const filterSelect = document.getElementById(
   "product-filter"
 ) as HTMLSelectElement | null;
-const filterButtonsContainer = document.getElementById(
-  "filter-buttons"
-) as HTMLElement | null;
+const filterButtonsContainer = document.getElementById("filter-buttons");
 
-// Botões do filtro
-
+// TURNING EACH OPTION FROM SELECT INTO A BUTTON
 if (filterSelect && filterButtonsContainer) {
   Array.from(filterSelect.options).forEach((option: HTMLOptionElement) => {
     const button = document.createElement("button");
@@ -68,15 +58,19 @@ if (filterSelect && filterButtonsContainer) {
         "button"
       ) as NodeListOf<HTMLButtonElement>;
 
+      // Removes active-filter class from all buttons before adding it only to the
+      // button clicked
       filterButtons.forEach((btn) => {
         btn.classList.remove("active-filter");
       });
+
       button.classList.add("active-filter");
     });
 
     filterButtonsContainer.appendChild(button);
   });
 
+  // Adds the active-filter class to the initial <select> value (Random)
   const initialButtons = filterButtonsContainer?.querySelectorAll(
     "button"
   ) as NodeListOf<HTMLButtonElement>;
@@ -88,8 +82,7 @@ if (filterSelect && filterButtonsContainer) {
   });
 }
 
-// Filtro em si
-
+// FILTERING PRODUCTS
 const productCards = document.querySelectorAll(
   ".product-card"
 ) as NodeListOf<HTMLElement>;
@@ -97,10 +90,10 @@ const productCards = document.querySelectorAll(
 if (filterSelect && productCards) {
   function filterProducts(category: string) {
     if (category === "random") {
-      let sliceEnd = window.innerWidth < 768 ? 2 : 3;
       const visibleCards = Array.from(productCards)
         .sort(() => 0.5 - Math.random())
-        .slice(0, sliceEnd);
+        .slice(0, 3);
+
       productCards.forEach((card) => {
         if (visibleCards.some((visibleCard) => visibleCard === card)) {
           card.style.display = "flex";
@@ -123,7 +116,6 @@ if (filterSelect && productCards) {
     filterProducts(filterSelect.value);
   });
 
-  filterProducts("random");
+  // Execute the function when page loads
+  filterProducts(filterSelect.value);
 }
-
-// FORM VALIDATION

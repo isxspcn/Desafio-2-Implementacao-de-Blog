@@ -1,9 +1,9 @@
 "use strict";
-// MENU DROPDOWN DO HEADER PRINCIPAL
+// MAIN HEADER DROPDOWN MENU (MOBILE)
 const dropdownButton = document.getElementById("hamburger-menu");
-const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenu = document.getElementById("page-nav");
 const overlay = document.getElementById("overlay");
-const menuLinks = document.querySelectorAll("#mobile-menu ul li a");
+const menuLinks = document.querySelectorAll("#page-nav ul li a");
 function toggleVisibility(element) {
     element === null || element === void 0 ? void 0 : element.classList.toggle("hidden");
 }
@@ -17,9 +17,9 @@ menuLinks.forEach((link) => {
         toggleVisibility(overlay);
     });
 });
-// MOVER O SEARCH DO HEADER DO SHOP PRO HEADER DOS PRODUTOS
+// MOVING PRODUCT SEARCH FROM SHOP HEADER TO FEATURED PRODUCTS HEADER
 const shopSearch = document.querySelector(".shop-search");
-const shopSectionHeader = shopSearch === null || shopSearch === void 0 ? void 0 : shopSearch.parentElement;
+const shopSectionHeader = document.querySelector("#shop .section-header");
 const featuredHeader = document.querySelector(".featured-header");
 function moveShopSearch() {
     if (shopSearch && shopSectionHeader && featuredHeader) {
@@ -31,12 +31,11 @@ function moveShopSearch() {
         }
     }
 }
-moveShopSearch();
 window.addEventListener("resize", moveShopSearch);
-// FILTRO DOS PRODUTOS
+// PRODUCT FILTER
 const filterSelect = document.getElementById("product-filter");
 const filterButtonsContainer = document.getElementById("filter-buttons");
-// Botões do filtro
+// TURNING EACH OPTION FROM SELECT INTO A BUTTON
 if (filterSelect && filterButtonsContainer) {
     Array.from(filterSelect.options).forEach((option) => {
         const button = document.createElement("button");
@@ -46,6 +45,8 @@ if (filterSelect && filterButtonsContainer) {
             filterSelect.value = button.value;
             filterSelect.dispatchEvent(new Event("change"));
             const filterButtons = filterButtonsContainer.querySelectorAll("button");
+            // Removes active-filter class from all buttons before adding it only to the
+            // button clicked
             filterButtons.forEach((btn) => {
                 btn.classList.remove("active-filter");
             });
@@ -53,6 +54,7 @@ if (filterSelect && filterButtonsContainer) {
         });
         filterButtonsContainer.appendChild(button);
     });
+    // Adds the active-filter class to the initial <select> value (Random)
     const initialButtons = filterButtonsContainer === null || filterButtonsContainer === void 0 ? void 0 : filterButtonsContainer.querySelectorAll("button");
     initialButtons.forEach((btn) => {
         if (btn.value === filterSelect.value) {
@@ -60,15 +62,14 @@ if (filterSelect && filterButtonsContainer) {
         }
     });
 }
-// Filtro em si
+// FILTERING PRODUCTS
 const productCards = document.querySelectorAll(".product-card");
 if (filterSelect && productCards) {
     function filterProducts(category) {
         if (category === "random") {
-            let sliceEnd = window.innerWidth < 768 ? 2 : 3;
             const visibleCards = Array.from(productCards)
                 .sort(() => 0.5 - Math.random())
-                .slice(0, sliceEnd);
+                .slice(0, 3);
             productCards.forEach((card) => {
                 if (visibleCards.some((visibleCard) => visibleCard === card)) {
                     card.style.display = "flex";
@@ -92,6 +93,6 @@ if (filterSelect && productCards) {
     filterSelect.addEventListener("change", () => {
         filterProducts(filterSelect.value);
     });
-    filterProducts("random");
+    // Execute the function when page loads
+    filterProducts(filterSelect.value);
 }
-// FORM VALIDATION

@@ -23,15 +23,26 @@
       <button id="hamburger-menu">
         <img src="imgs/ci-menu.svg" />
       </button>
-      <nav id="mobile-menu" class="hidden">
+      <nav id="page-nav" class="hidden">
         <ul>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#services">Services</a></li>
+          <li>
+            <a href="#shop"
+              >Shop
+              <img src="imgs/header-nav-chevron-down.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#services"
+              >Services
+              <img src="imgs/header-nav-chevron-down.svg" alt="" />
+            </a>
+          </li>
           <li><a href="#about-us">About Us</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <a href="#shop" class="action-button">Get Started</a>
     </header>
     <div id="overlay" class="hidden"></div>
 
@@ -90,6 +101,35 @@
           </div>
 
           <div class="product-cards">
+            <article class="product-card" data-category="cats">
+              <section class="product-title-desc">
+                <h4 class="product-title">Cat Food</h4>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur. Vitae donec
+                  pellentesque ut eget tempor egestas diam.
+                </p>
+              </section>
+              <section class="product-price-fav">
+                <p class="product-price">₦15,000.00</p>
+                <button class="product-fav">
+                  <img src="imgs/product-icon-favorite.svg" alt="" />
+                </button>
+              </section>
+              <section class="product-quantity-cart">
+                <div class="product-quantity">
+                  <button class="quantity-btn minus">-</button>
+                  <span id="quantity-input">1</span>
+                  <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-cart">Add to cart</button>
+              </section>
+              <img
+                class="product-image"
+                src="imgs/product-cat-food-3.jpeg"
+                alt="Pacote laranja de ração de gato"
+              />
+            </article>
+
             <article class="product-card" data-category="cats">
               <section class="product-title-desc">
                 <h4 class="product-title">Multivitamin For Cat</h4>
@@ -206,6 +246,35 @@
               />
             </article>
 
+            <article class="product-card" data-category="dogs">
+              <section class="product-title-desc">
+                <h4 class="product-title">Dog Food</h4>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur. Vitae donec
+                  pellentesque ut eget tempor egestas diam.
+                </p>
+              </section>
+              <section class="product-price-fav">
+                <p class="product-price">₦15,000.00</p>
+                <button class="product-fav">
+                  <img src="imgs/product-icon-favorite.svg" alt="" />
+                </button>
+              </section>
+              <section class="product-quantity-cart">
+                <div class="product-quantity">
+                  <button class="quantity-btn minus">-</button>
+                  <span id="quantity-input">1</span>
+                  <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-cart">Add to cart</button>
+              </section>
+              <img
+                class="product-image"
+                src="imgs/product-dog-food-3.jpeg"
+                alt="Lata de ração de cachorro"
+              />
+            </article>
+
             <article class="product-card" data-category="fish">
               <section class="product-title-desc">
                 <h4 class="product-title">Fish Food</h4>
@@ -264,6 +333,35 @@
               />
             </article>
 
+            <article class="product-card" data-category="fish">
+              <section class="product-title-desc">
+                <h4 class="product-title">Fish Tank with Filter</h4>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur. Vitae donec
+                  pellentesque ut eget tempor egestas diam.
+                </p>
+              </section>
+              <section class="product-price-fav">
+                <p class="product-price">₦15,000.00</p>
+                <button class="product-fav">
+                  <img src="imgs/product-icon-favorite.svg" alt="" />
+                </button>
+              </section>
+              <section class="product-quantity-cart">
+                <div class="product-quantity">
+                  <button class="quantity-btn minus">-</button>
+                  <span id="quantity-input">1</span>
+                  <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-cart">Add to cart</button>
+              </section>
+              <img
+                class="product-image"
+                src="imgs/product-fish-tank-1.jpeg"
+                alt="Pacote azul de comida de peixe"
+              />
+            </article>
+
             <article class="product-card" data-category="birds">
               <section class="product-title-desc">
                 <h4 class="product-title">Bird Food</h4>
@@ -318,6 +416,35 @@
               <img
                 class="product-image"
                 src="imgs/product-bird-food-2.jpeg"
+                alt="Pacote de comida de pássaro 2"
+              />
+            </article>
+
+            <article class="product-card" data-category="birds">
+              <section class="product-title-desc">
+                <h4 class="product-title">Bird Water</h4>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur. Vitae donec
+                  pellentesque ut eget tempor egestas diam.
+                </p>
+              </section>
+              <section class="product-price-fav">
+                <p class="product-price">₦15,000.00</p>
+                <button class="product-fav">
+                  <img src="imgs/product-icon-favorite.svg" alt="" />
+                </button>
+              </section>
+              <section class="product-quantity-cart">
+                <div class="product-quantity">
+                  <button class="quantity-btn minus">-</button>
+                  <span id="quantity-input">1</span>
+                  <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-cart">Add to cart</button>
+              </section>
+              <img
+                class="product-image"
+                src="imgs/product-bird-water-1.jpeg"
                 alt="Pacote de comida de pássaro 2"
               />
             </article>
@@ -409,39 +536,44 @@
             <h2>About Us</h2>
           </div>
         </header>
-        <p>
-          At Paws n’ Play, our journey began with a simple yet profound love for
-          animals. Inspired by the unwavering companionship and joy they bring
-          to our lives, we embarked on a mission to create a haven where pets
-          and their owners alike could experience unparalleled happiness and
-          care.
-        </p>
-        <p>
-          Driven by our passion for animal welfare, we hand-select each product
-          and service with meticulous attention to quality and sustainability.
-          From nutritious food and enriching toys to expert grooming and
-          healthcare, every offering is carefully curated to meet the unique
-          needs of our beloved furry friends.
-        </p>
-        <p>
-          But our commitment doesn't end there. We're dedicated to fostering a
-          community that celebrates the bond between pets and their human
-          companions. Through educational resources, compassionate support, and
-          memorable experiences, we strive to empower pet owners to provide the
-          best possible care for their furry family members.
-        </p>
-        <p>
-          At Paws n’ Play, customer satisfaction isn't just a goal – it's our
-          guiding principle. We go above and beyond to ensure every interaction
-          leaves tails wagging and hearts smiling. From personalized
-          recommendations to attentive service, we're here to make your journey
-          with your pet as joyful and fulfilling as possible.
-        </p>
-        <p>
-          Join us in our mission to create a world where every pet is cherished,
-          every need is met, and every tail wags with happiness. Welcome to Paws
-          n’ Play, where pets are family, and love knows no bounds.
-        </p>
+        <div class="about-content">
+          <p>
+            At Paws n’ Play, our journey began with a simple yet profound love
+            for animals. Inspired by the unwavering companionship and joy they
+            bring to our lives, we embarked on a mission to create a haven where
+            pets and their owners alike could experience unparalleled happiness
+            and care.
+          </p>
+          <p>
+            Driven by our passion for animal welfare, we hand-select each
+            product and service with meticulous attention to quality and
+            sustainability. From nutritious food and enriching toys to expert
+            grooming and healthcare, every offering is carefully curated to meet
+            the unique needs of our beloved furry friends.
+          </p>
+          <p>
+            But our commitment doesn't end there. We're dedicated to fostering a
+            community that celebrates the bond between pets and their human
+            companions. Through educational resources, compassionate support,
+            and memorable experiences, we strive to empower pet owners to
+            provide the best possible care for their furry family members.
+          </p>
+          <p>
+            At Paws n’ Play, customer satisfaction isn't just a goal – it's our
+            guiding principle. We go above and beyond to ensure every
+            interaction leaves tails wagging and hearts smiling. From
+            personalized recommendations to attentive service, we're here to
+            make your journey with your pet as joyful and fulfilling as
+            possible.
+          </p>
+          <p>
+            Join us in our mission to create a world where every pet is
+            cherished, every need is met, and every tail wags with happiness.
+            Welcome to Paws n’ Play, where pets are family, and love knows no
+            bounds.
+          </p>
+          <img src="imgs/about-cats.png" alt="" />
+        </div>
       </section>
 
       <section id="blog" class="section">
@@ -655,11 +787,12 @@
         </section>
 
         <section class="contact-form-section" aria-label="Contact Form">
-          <form id="contact-form" action="" method="POST">
+          <form id="contact-form" action="" method="">
             <div class="form-item">
               <label for="first-name">First Name</label>
               <input
                 type="text"
+                autocomplete="off"
                 name="first-name"
                 id="first-name"
                 placeholder="First name"
@@ -671,6 +804,7 @@
               <label for="last-name">Last Name</label>
               <input
                 type="text"
+                autocomplete="off"
                 name="last-name"
                 id="last-name"
                 placeholder="Last name"
@@ -682,6 +816,7 @@
               <label for="email">Email</label>
               <input
                 type="text"
+                autocomplete="off"
                 name="email"
                 id="email"
                 placeholder="you@company.com"
@@ -692,6 +827,7 @@
             <div class="form-item wide">
               <label for="message">Message</label>
               <textarea
+                autocomplete="off"
                 rows="4"
                 name="message"
                 id="message"
@@ -734,7 +870,12 @@
           </p>
 
           <form id="newsletter-form" action="">
-            <input type="email" placeholder="Enter your email" required />
+            <input
+              type="email"
+              autocomplete="off"
+              placeholder="Enter your email"
+              required
+            />
             <button type="submit">Subscribe</button>
           </form>
         </section>
