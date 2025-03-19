@@ -34,7 +34,7 @@ function moveShopSearch() {
     }
   }
 }
-
+moveShopSearch();
 window.addEventListener("resize", moveShopSearch);
 
 // PRODUCT FILTER

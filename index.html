@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="ts/js/mobile.js" defer></script>
+    <script src="ts/js/app.js" defer></script>
   </head>
   <body>
     <header>
@@ -48,6 +48,7 @@
 
     <main>
       <section id="hero">
+        <div class="wrapper">
         <h1>Pawsitively Perfect: Where Every Pet's Dream Comes True!</h1>
 
         <p>
@@ -62,6 +63,7 @@
           Shop Now
           <img src="imgs/fef-paw-prints-1.svg" alt="" aria-hidden="true" />
         </a>
+      </div>
       </section>
 
       <section id="shop" class="section">
@@ -748,224 +750,243 @@
       </section>
 
       <section id="contact" class="section footer-sections">
-        <header class="section-header footer-sections-header">
-          <div>
-            <img src="imgs/fef-paw-prints-1.svg" alt="" aria-hidden="true" />
-            <h2>Get in touch</h2>
-          </div>
-        </header>
+        <div class="wrapper">
+          <header class="section-header footer-sections-header">
+            <div>
+              <img src="imgs/fef-paw-prints-1.svg" alt="" aria-hidden="true" />
+              <h2>Get in touch</h2>
+            </div>
+          </header>
 
-        <section class="contact-cards">
-          <article class="contact-card">
-            <img src="imgs/contact-icon-email.svg" alt="" aria-hidden="true" />
-            <h3>Email</h3>
-            <p>Our friendly team is here to help.</p>
-            <a href="">hello@pawsnplay.com</a>
-          </article>
-          <article class="contact-card">
-            <img
-              src="imgs/contact-icon-live-chat.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <h3>Live chat</h3>
-            <p>Our friendly team is here to help.</p>
-            <a href="">Start new chat</a>
-          </article>
-          <article class="contact-card">
-            <img src="imgs/contact-icon-office.svg" alt="" aria-hidden="true" />
-            <h3>Office</h3>
-            <p>Come say hello at our office HQ.</p>
-            <address>123, Yaya Abatan st, Ogba Lagos.</address>
-          </article>
-          <article class="contact-card">
-            <img src="imgs/contact-icon-phone.svg" alt="" aria-hidden="true" />
-            <h3>Phone</h3>
-            <p>Mon-Fri from 8am to 5pm.</p>
-            <a href="">+234 901234 384</a>
-          </article>
-        </section>
-
-        <section class="contact-form-section" aria-label="Contact Form">
-          <form id="contact-form" action="" method="">
-            <div class="form-item">
-              <label for="first-name">First Name</label>
-              <input
-                type="text"
-                autocomplete="off"
-                name="first-name"
-                id="first-name"
-                placeholder="First name"
-                required
+          <section class="contact-cards">
+            <article class="contact-card">
+              <img
+                src="imgs/contact-icon-email.svg"
+                alt=""
+                aria-hidden="true"
               />
-            </div>
-
-            <div class="form-item">
-              <label for="last-name">Last Name</label>
-              <input
-                type="text"
-                autocomplete="off"
-                name="last-name"
-                id="last-name"
-                placeholder="Last name"
-                required
+              <h3>Email</h3>
+              <p>Our friendly team is here to help.</p>
+              <a href="">hello@pawsnplay.com</a>
+            </article>
+            <article class="contact-card">
+              <img
+                src="imgs/contact-icon-live-chat.svg"
+                alt=""
+                aria-hidden="true"
               />
-            </div>
-
-            <div class="form-item wide">
-              <label for="email">Email</label>
-              <input
-                type="text"
-                autocomplete="off"
-                name="email"
-                id="email"
-                placeholder="you@company.com"
-                required
+              <h3>Live chat</h3>
+              <p>Our friendly team is here to help.</p>
+              <a href="">Start new chat</a>
+            </article>
+            <article class="contact-card">
+              <img
+                src="imgs/contact-icon-office.svg"
+                alt=""
+                aria-hidden="true"
               />
-            </div>
-
-            <div class="form-item wide">
-              <label for="message">Message</label>
-              <textarea
-                autocomplete="off"
-                rows="4"
-                name="message"
-                id="message"
-                required
-              ></textarea>
-            </div>
-
-            <div class="form-item wide">
-              <input
-                type="checkbox"
-                name="privacy-policy"
-                id="privacy-policy"
-                required
+              <h3>Office</h3>
+              <p>Come say hello at our office HQ.</p>
+              <address>123, Yaya Abatan st, Ogba Lagos.</address>
+            </article>
+            <article class="contact-card">
+              <img
+                src="imgs/contact-icon-phone.svg"
+                alt=""
+                aria-hidden="true"
               />
-              <label for="privacy-policy"
-                >You agree to our friendly <a href="">privacy policy</a>.</label
-              >
-            </div>
+              <h3>Phone</h3>
+              <p>Mon-Fri from 8am to 5pm.</p>
+              <a href="">+234 901234 384</a>
+            </article>
+          </section>
 
-            <div class="form-item wide">
-              <button type="submit">Send message</button>
-            </div>
-          </form>
-        </section>
+          <section class="contact-form-section" aria-label="Contact Form">
+            <form id="contact-form" action="" method="">
+              <div class="form-item">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  autocomplete="off"
+                  name="first-name"
+                  id="first-name"
+                  placeholder="First name"
+                  required
+                />
+              </div>
+
+              <div class="form-item">
+                <label for="last-name">Last Name</label>
+                <input
+                  type="text"
+                  autocomplete="off"
+                  name="last-name"
+                  id="last-name"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
+
+              <div class="form-item wide">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  autocomplete="off"
+                  name="email"
+                  id="email"
+                  placeholder="you@company.com"
+                  required
+                />
+              </div>
+
+              <div class="form-item wide">
+                <label for="message">Message</label>
+                <textarea
+                  autocomplete="off"
+                  rows="4"
+                  name="message"
+                  id="message"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-item wide">
+                <input
+                  type="checkbox"
+                  name="privacy-policy"
+                  id="privacy-policy"
+                  required
+                />
+                <label for="privacy-policy"
+                  >You agree to our friendly
+                  <a href="">privacy policy</a>.</label
+                >
+              </div>
+
+              <div class="form-item wide">
+                <button type="submit">Send message</button>
+              </div>
+            </form>
+          </section>
+        </div>
       </section>
 
       <section id="footer" class="section footer-sections">
-        <header class="section-header">
-          <div>
-            <img src="imgs/fef-paw-prints-1.svg" alt="" aria-hidden="true" />
-            <h2 aria-label="Footer: Paws n' Play">Paws n' Play</h2>
-          </div>
-          <p>Where wagging tails and purring hearts reign supreme!</p>
-        </header>
+        <div class="wrapper">
+          <header class="section-header">
+            <div>
+              <img src="imgs/fef-paw-prints-1.svg" alt="" aria-hidden="true" />
+              <h2 aria-label="Footer: Paws n' Play">Paws n' Play</h2>
+            </div>
+            <p>Where wagging tails and purring hearts reign supreme!</p>
+          </header>
 
-        <section class="newsletter">
-          <h3>Join our newsletter</h3>
-          <p>
-            Be the first to receive latest updates on promo, sales and offers.
-          </p>
+          <section class="newsletter">
+            <h3>Join our newsletter</h3>
+            <p>
+              Be the first to receive latest updates on promo, sales and offers.
+            </p>
 
-          <form id="newsletter-form" action="">
-            <input
-              type="email"
-              autocomplete="off"
-              placeholder="Enter your email"
-              required
-            />
-            <button type="submit">Subscribe</button>
-          </form>
-        </section>
+            <form id="newsletter-form" action="">
+              <input
+                type="email"
+                autocomplete="off"
+                placeholder="Enter your email"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </section>
 
-        <section class="links">
-          <nav class="link-group">
-            <h3>Shop</h3>
-            <ul>
-              <li><a href="">Pet Adoption</a></li>
-              <li><a href="">Nutrition</a></li>
-              <li><a href="">Pet Care</a></li>
-              <li><a href="">Pet Food</a></li>
-              <li><a href="">Pricing</a></li>
-            </ul>
-          </nav>
-          <nav class="link-group">
-            <h3>Company</h3>
-            <ul>
-              <li><a href="">About us</a></li>
-              <li><a href="">Careers</a></li>
-              <li><a href="">Press</a></li>
-              <li><a href="">News</a></li>
-              <li><a href="">Contact</a></li>
-            </ul>
-          </nav>
-          <nav class="link-group">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="">Grooming</a></li>
-              <li><a href="">Boarding</a></li>
-              <li><a href="">Training</a></li>
-              <li><a href="">Veterinary</a></li>
-              <li><a href="">Support</a></li>
-            </ul>
-          </nav>
-          <nav class="link-group">
-            <h3>Social</h3>
-            <ul>
-              <li><a href="">Twitter</a></li>
-              <li><a href="">LinkedIn</a></li>
-              <li><a href="">Facebook</a></li>
-              <li><a href="">AngelList</a></li>
-              <li><a href="">Dribbble</a></li>
-            </ul>
-          </nav>
-          <nav class="link-group">
-            <h3>Legal</h3>
-            <ul>
-              <li><a href="">Terms</a></li>
-              <li><a href="">Privacy</a></li>
-              <li><a href="">Cookies</a></li>
-              <li><a href="">Licenses</a></li>
-              <li><a href="">Settings</a></li>
-            </ul>
-          </nav>
-        </section>
+          <section class="links">
+            <nav class="link-group">
+              <h3>Shop</h3>
+              <ul>
+                <li><a href="">Pet Adoption</a></li>
+                <li><a href="">Nutrition</a></li>
+                <li><a href="">Pet Care</a></li>
+                <li><a href="">Pet Food</a></li>
+                <li><a href="">Pricing</a></li>
+              </ul>
+            </nav>
+            <nav class="link-group">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="">About us</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Press</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </nav>
+            <nav class="link-group">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="">Grooming</a></li>
+                <li><a href="">Boarding</a></li>
+                <li><a href="">Training</a></li>
+                <li><a href="">Veterinary</a></li>
+                <li><a href="">Support</a></li>
+              </ul>
+            </nav>
+            <nav class="link-group">
+              <h3>Social</h3>
+              <ul>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">LinkedIn</a></li>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">AngelList</a></li>
+                <li><a href="">Dribbble</a></li>
+              </ul>
+            </nav>
+            <nav class="link-group">
+              <h3>Legal</h3>
+              <ul>
+                <li><a href="">Terms</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Cookies</a></li>
+                <li><a href="">Licenses</a></li>
+                <li><a href="">Settings</a></li>
+              </ul>
+            </nav>
+          </section>
 
-        <section class="copyright-bar">
-          <p>© 2024 Paws n’ Play. All rights reserved.</p>
-          <ul>
-            <li>
-              <a href=""
-                ><img src="imgs/footer-socials-twitter.svg" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href=""
-                ><img src="imgs/footer-socials-linkedin.svg" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href=""
-                ><img src="imgs/footer-socials-facebook.svg" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href=""><img src="imgs/footer-socials-github.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""
-                ><img src="imgs/footer-socials-angellist.svg" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href=""
-                ><img src="imgs/footer-socials-dribbble.svg" alt=""
-              /></a>
-            </li>
-          </ul>
-        </section>
+          <section class="copyright-bar">
+            <p>© 2024 Paws n’ Play. All rights reserved.</p>
+            <ul>
+              <li>
+                <a href=""
+                  ><img src="imgs/footer-socials-twitter.svg" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="imgs/footer-socials-linkedin.svg" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="imgs/footer-socials-facebook.svg" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="imgs/footer-socials-github.svg" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="imgs/footer-socials-angellist.svg" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="imgs/footer-socials-dribbble.svg" alt=""
+                /></a>
+              </li>
+            </ul>
+          </section>
+        </div>
       </section>
     </main>
   </body>

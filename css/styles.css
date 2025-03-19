@@ -53,6 +53,7 @@ main {
   position: absolute;
   display: flex;
   flex-direction: column;
+  width: 100vw;
   z-index: 1;
 }
 
@@ -178,18 +179,24 @@ body > header {
 /* HERO SECTION ------------------------------------------------- */
 
 #hero {
-  /* LAYOUT */
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  height: 38rem;
-  justify-content: center;
-  padding: 6rem 3.125rem 4rem 1.75rem;
   /* APPEARANCE */
-  color: #fff;
   background-image: url(../imgs/hero-background.png);
   background-position: 20%;
   background-size: cover;
+}
+
+#hero .wrapper {
+  /* LAYOUT */
+  align-items: flex-start;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 38rem;
+  padding: 6rem 3.125rem 4rem 1.75rem;
+  width: 1440px;
+  /* APPEARANCE */
+  color: #fff;
   /* FLEX */
   order: 1;
   /* OTHER */
@@ -970,8 +977,10 @@ body > header {
   body > header {
     /* LAYOUT */
     align-items: center;
+    align-self: center;
     justify-content: normal;
     padding: 1.125rem 5rem;
+    width: 1440px;
     /* OTHER */
     gap: 3.125rem;
   }
@@ -1082,7 +1091,9 @@ body > header {
 
   .section {
     /* LAYOUT */
+    align-self: center;
     padding: 4.5rem 5rem;
+    width: 1440px;
   }
 
   .section-header {
@@ -1101,20 +1112,30 @@ body > header {
     font-size: 2.25rem;
   }
 
+  .wrapper {
+    /* LAYOUT */
+    padding: 4.5rem 5rem;
+    width: 1440px;
+  }
+
   /* HERO SECTION ------------------------------------------------- */
 
   #hero {
-    /* LAYOUT */
-    height: 48.75rem;
-    padding-left: 5rem;
     /* APPEARANCE */
-    background-position: -40% 60%;
-    background-size: 120%;
+    background-position: 0% 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #hero .wrapper {
+    /* LAYOUT */
+    height: 100vh;
+    padding-left: 5rem;
     /* OTHER */
     gap: 2rem;
   }
 
-  #hero * {
+  #hero .wrapper * {
     /* LAYOUT */
     max-width: 40rem;
   }
@@ -1660,14 +1681,22 @@ body > header {
 
   /* CONTACT SECTION ------------------------------------------------- */
 
-  #contact {
+  #contact .wrapper {
     /* LAYOUT */
     align-items: center;
+    justify-self: center;
     display: grid;
     /* GRID */
     grid-template-columns: 1fr 1fr;
     /* OTHER */
     column-gap: 4rem;
+  }
+
+  #contact,
+  #footer {
+    /* LAYOUT */
+    padding: 0;
+    width: 100vw;
   }
 
   #contact .section-header {
@@ -1799,8 +1828,9 @@ body > header {
 
   /* FOOTER SECTION ------------------------------------------------- */
 
-  #footer {
+  #footer .wrapper {
     /* LAYOUT */
+    align-self: center;
     display: grid;
     /* GRID */
     grid-template-columns: auto 1fr;
