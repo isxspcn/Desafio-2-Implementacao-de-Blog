@@ -600,7 +600,6 @@ body > header {
   /* FLEX */
   order: 7;
 }
-
 .footer-sections {
   /* APPEARANCE */
   background-color: var(--grey-900);
@@ -796,13 +795,16 @@ body > header {
 /* FOOTER SECTION ------------------------------------------------- */
 
 #footer {
-  /* LAYOUT */
-  display: flex;
-  flex-direction: column;
-  /* FLEX */
   order: 8;
   /* OTHER */
-  gap: 2.5rem;
+}
+
+#footer .wrapper {
+    /* LAYOUT */
+    display: flex;
+    flex-direction: column;
+    /* OTHER */
+    gap: 2.5rem;
 }
 
 #footer header {
@@ -1830,7 +1832,7 @@ body > header {
 
   #footer .wrapper {
     /* LAYOUT */
-    align-self: center;
+    justify-self: center;
     display: grid;
     /* GRID */
     grid-template-columns: auto 1fr;
